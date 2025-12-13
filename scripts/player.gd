@@ -15,8 +15,7 @@ func _process(_delta):
 	if direction.x<0:
 		animated_sprite.flip_h= true
 		
-	if direction !=0:
-		animated_sprite.flip_v = direction < 0
+	
 		
 	#if direction.y <0:
 		#animated_sprite.rotation_degrees=
