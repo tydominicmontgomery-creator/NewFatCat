@@ -5,6 +5,7 @@ var player_health = 100
 var alive = true
 
 var can_eat = true
+var attacking = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -26,11 +27,16 @@ func _process(_delta):
 		velocity = direction*500
 		move_and_slide()
 	
-	if alive and can_eat:
+	if alive and can_eat and !attacking:
 		if !velocity:  
 			animated_sprite.play("idle")
 		if velocity:
 			animated_sprite.play("moving")
+	if Input.is_action_pressed("click") and !attacking:
+		velocity*=0
+		attacking = true
+		animated_sprite.play("attack")
+		$ATimer.start()
 	
 		
 			
@@ -64,3 +70,7 @@ func _process(_delta):
 		## start the death timer if present
 		#if has_node("deathTimer"):
 			#$deathTimer.start()
+
+
+func _on_a_timer_timeout() -> void:
+	attacking = false

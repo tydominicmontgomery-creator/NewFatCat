@@ -346,9 +346,13 @@ scale = Vector2(2.5937502, 2.5937502)
 sprite_frames = SubResource("SpriteFrames_efikj")
 animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.37051484
+frame_progress = 0.18234143
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.3841858e-07, 30)
 rotation = 1.5831647
 shape = SubResource("RectangleShape2D_xhfnw")
+
+[node name="ATimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ATimer" to="." method="_on_a_timer_timeout"]
