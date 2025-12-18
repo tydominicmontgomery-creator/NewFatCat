@@ -1,20 +1,37 @@
 extends CharacterBody2D
 
+#defines varibles
 var player_health = 100
-
 var alive = true
-
 var can_eat = true
+@export var speed= 500
+@export var rotation_speed = 15
 
+var rotation_direction = 0
+#calls animated sprite node
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-func _process(_delta):
+#func runs while the game runs
+func get_input():
+	look_at(get_global_mouse_position())
+	velocity = transform.x*Input.get_axis("up","down,right,left")*speed
+	
+func _physics_process(delta):
+	get_input()
+	rotation += rotation_direction*rotation_speed*delta
+	move_and_slide()
+	
+
+'func _process(_delta):
+	
+	# gets
 	var direction = Input.get_vector("left", "right","up","down")
 	if direction.x > 0:
 		animated_sprite.flip_h = false
 	if direction.x<0:
 		animated_sprite.flip_h= true
-		
+	if direction.y > 0:
+		animated_sprite.flip_v = false
 	
 		
 	#if direction.y <0:
@@ -29,7 +46,7 @@ func _process(_delta):
 		if !velocity:  
 			animated_sprite.play("idle")
 		if velocity:
-			animated_sprite.play("moving")
+			animated_sprite.play("moving")'
 	
 			
 			
