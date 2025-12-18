@@ -8,17 +8,18 @@ var can_eat = true
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+
 func _process(_delta):
+	
+	
 	var direction = Input.get_vector("left", "right","up","down")
 	if direction.x > 0:
 		animated_sprite.flip_h = false
 	if direction.x<0:
 		animated_sprite.flip_h= true
-		
 	
-		
-	#if direction.y <0:
-		#animated_sprite.rotation_degrees=
+	
+	#
 		
 		
 	if alive:
@@ -31,7 +32,7 @@ func _process(_delta):
 		if velocity:
 			animated_sprite.play("moving")
 	
-			
+		
 			
 	#if Input.is_action_pressed("pick_up") and can_eat:
 		#animated_sprite.play("piking up item")
