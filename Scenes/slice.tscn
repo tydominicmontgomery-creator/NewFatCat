@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5a3ds2pxvdiu"]
+
+[ext_resource type="Texture2D" uid="uid://bbmjfsr4ujkfu" path="res://Design/ChatGPT Image Dec 18, 2025, 03_34_16 PM.png" id="1_y4txe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o2ow"]
+atlas = ExtResource("1_y4txe")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqp8v"]
+atlas = ExtResource("1_y4txe")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c67xn"]
+atlas = ExtResource("1_y4txe")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1ybs"]
+atlas = ExtResource("1_y4txe")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22y4g"]
+atlas = ExtResource("1_y4txe")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6vsbi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o2ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqp8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c67xn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1ybs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22y4g")
+}],
+"loop": true,
+"name": &"slice",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6vsbi")
+animation = &"slice"
