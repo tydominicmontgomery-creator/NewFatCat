@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=8 format=3 uid="uid://b5a3ds2pxvdiu"]
+=======
+[gd_scene load_steps=8 format=3 uid="uid://b3puqdl0mdbst"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://bbmjfsr4ujkfu" path="res://Design/ChatGPT Image Dec 18, 2025, 03_34_16 PM.png" id="1_y4txe"]
 
